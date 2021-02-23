@@ -9,4 +9,4 @@ result = round(growthPercentage, 3)
 if result > 0:
     print("The share price increased by:", result, "percent")
 else:
-    print("The stock lost:", result, "percentage in value"
+    print("The stock lost:", result, "percentage in value")
