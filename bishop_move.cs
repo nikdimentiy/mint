@@ -1,3 +1,5 @@
+// The program calculates: whether a bishop (in chess) will be able to attack a given piece
+
 using System;
 
 namespace ConsoleApplication1
