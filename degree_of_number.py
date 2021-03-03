@@ -7,7 +7,7 @@ print()
 count = 1
 while count <= degree:
     print(count, "degree of the entered number is: ", pow(x, n))
-    n +=1
-    count +=1
+    n += 1
+    count += 1
 print("\n")
 print("Finish operation")
