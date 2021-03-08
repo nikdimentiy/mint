@@ -14,7 +14,7 @@ namespace Softcode
 
             int sum = 0;
 
-            while (n != 0)
+            while (n != 0) // for terminate the process (enters numbers) - enter zero "0"
             {
                 if (n % 2 == 0 && n % 3 != 0)
                     sum = sum + n;
