@@ -1,4 +1,4 @@
-// check for the existence of a triangle
+// the code calculates possible: to make a triangle for entered data
 using System;
 
 namespace Softcode
