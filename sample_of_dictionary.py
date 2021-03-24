@@ -4,7 +4,18 @@ favorite_lang = {
     'sarah': 'kotlin',
     'derek': 'python',
     'edward': 'java',
-    'phil': 'lua'
+    'phil': 'lua',
+    'anthony': 'scala',
+    'brandon': 'python',
+    'daniel': 'csharp',
+    'kevin': 'java',
+    'eric': 'javascript',
+    'frank': 'julia',
+    'harry': 'swift',
+    'jonathan': 'java',
+    'mike': 'rust',
+    'noah': 'python',
+    'patrick': 'javascript',
 }
 
 friends = ['phil', 'sarah', 'derek']
@@ -17,3 +28,9 @@ print()
 print("The following languages have been mentioned: ")
 for language in sorted(favorite_lang.values()):
     print(language.title())
+
+print()
+print("The unique list of programming languages: ")
+for language in set(favorite_lang.values()):
+    print(language.title())
+
