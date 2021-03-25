@@ -34,3 +34,31 @@ print("The unique list of programming languages: ")
 for language in set(favorite_lang.values()):
     print(language.title())
 
+# list of dictionary
+
+alien_0 = {'color': 'green', 'points': 5} # dictionary 1
+alien_1 = {'color': 'yellow', 'points': 10} # dictionary 2
+alien_2 = {'color': 'red', 'points': 15} # dictionary 3
+
+aliens = [alien_0, alien_1, alien_2] # the total list of dictionaries
+
+for alien in aliens:
+    print(alien)
+
+# creating a new empty list for storage of aliens
+aliens = []
+# creating 30 new green aliens
+for alien_number in range(30):
+    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+    aliens.append(new_alien)
+
+# output of first new aliens 
+for alien in aliens[:5]:
+    print(alien)
+print("...")
+
+# the output of total quantity of aliens
+print("Total number of aliens: " + str(len(aliens)))
+
+
+
