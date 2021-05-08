@@ -1,22 +1,40 @@
-# Modern Caesar cypher
-sentence = input("Enter any sentence: ")
-sentence = list(sentence)
-print(sentence)
-coding_list = []
-dict_table = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5,
-              'f': 6, 'g': 7, 'h': 8, 'i': 9, 'j': 10,
-              'k': 11, 'l': 12, 'm': 13, 'n': 14, 'o': 15,
-              'p': 16, 'q': 17, 'r': 18, 's': 19, 't': 20,
-              'u': 21, 'v': 22, 'w': 23, 'x': 24, 'y': 25, 'z': 26,
-              'A': 27, 'B': 28, 'C': 29, 'D': 30, 'E': 31,
-              'F': 32, 'G': 33, 'H': 34, 'I': 35, 'J': 36,
-              'K': 37, 'L': 38, 'M': 39, 'N': 40, 'O': 41,
-              'P': 42, 'Q': 43, 'R': 44, 'S': 45, 'T': 46,
-              'U': 47, 'V': 48, 'W': 49, 'X': 50, 'Y': 51, 'Z': 52, }
-print()
-for key, value in dict_table.items():
-    for k in sentence:
-        if key == k:
-            coding_list.append(value)
+# Caesar's code
 
-print(coding_list)
+alphabet = ("abcdefghijklmnopqrstuvwxyz!@#$%/") * 26
+print("Enter the number of operation: ")
+choice = int(input("Enter your choice: 1 - Encrypt the message, 2 - Decrypt the message: "))
+
+if choice == 1:
+    open_message = input("Enter the message you want to encrypt: ")
+    key_for_encrypt = int(input("Enter the code number: (1 - 25) "))
+
+    if key_for_encrypt == 26:
+        print("You entered illegal code number!")
+    else:
+        open_message = open_message.lower()
+        encrypt_message = ''
+
+        for letter in open_message:
+            position = alphabet.find(letter)
+            new_position = position + key_for_encrypt
+            if letter in alphabet:
+                encrypt_message = encrypt_message + alphabet[new_position]
+            else:
+                encrypt_message = encrypt_message + letter
+
+        print("Your encrypt message is: ", encrypt_message)
+
+
+elif choice == 2:
+    encrypt_message = input("Enter the message you want to decrypt: ")
+    key_for_encrypt = int(input("Enter the correct code for decrypt message: "))
+    decrypt_message = ''
+    for encrypt_letter in encrypt_message:
+        position = alphabet.find(encrypt_letter)
+        new_position = position - key_for_encrypt
+        if encrypt_letter in alphabet:
+            decrypt_message = encrypt_message - alphabet[new_position]
+        else:
+            decrypt_message = encrypt_message - encrypt_letter
+
+    print("Your decrypt message is: ", decrypt_message)
