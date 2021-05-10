@@ -1,6 +1,6 @@
 # Caesar's code
 
-alphabet = ("abcdefghijklmnopqrstuvwxyz") * 26
+alphabet = "abcdefghijklmnopqrstuvwxyz!?'#1234567890%$*()@ " * 26
 print("Enter the number of operation: ")
 choice = int(input("Enter your choice: 1 - Encrypt the message, 2 - Decrypt the message: "))
 
@@ -36,4 +36,3 @@ elif choice == 2:
     decrypt_message = ''.join(decrypt_message)
 
     print("Your decrypt message is: ", decrypt_message)
-
