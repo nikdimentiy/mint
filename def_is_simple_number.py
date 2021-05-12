@@ -6,11 +6,12 @@ def is_simple_number(x):
     while divisor < x:
         if x % divisor == 0:
             return False
-        divisor = divisor + 1
+        divisor += 1
     return True
 number = int(input("Enter the integer number, please: "))
-result = False
-if result == False:
+result = is_simple_number(number)
+if result == True:
     print("The entered number is simple!")
 else:
     print("The number has more than two divisors!")
+
