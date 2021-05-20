@@ -17,6 +17,13 @@ for i in range(n):
                     if 0 <= ai < n and 0 <= aj < m and a[ai][aj] == -1:
                         a[i][j] += 1
 # output results
+print("__________________________________________________________________")
+print("""Data Output Meaning: 
+
+* - bomb;
+number(value) - show how many bombs are there in neighboring cells;
+(.) point - doesn't border on any field where there can be a bomb; """)
+print("__________________________________________________________________")
 for i in range(n):
     for j in range(m):
         if a[i][j] == -1:
