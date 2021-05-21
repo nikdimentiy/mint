@@ -1,3 +1,4 @@
+// tiny code - calculates whether the entered number is even or odd
 #include <stdio.h>
 
 int main(void) {
@@ -5,6 +6,7 @@ int main(void) {
 
     while (x != 0) {
         printf("Give me integer number: \n");
+        printf("For terminate process of input numbers - please, input 0 (zero): \n");
         scanf("%d", &x);
         if (x % 2 == 0 && x != 0)
             printf("Your %i (number) is even!\n", x);
