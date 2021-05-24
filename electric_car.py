@@ -1,3 +1,6 @@
+# this example of the code shows one of the principles of OOP (inheritance):
+# how a class of heir is created from the parent class
+
 class Car():
     """Simple car model"""
     def __init__(self, make, model, year):
