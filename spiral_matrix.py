@@ -1,3 +1,5 @@
+# classic task: filling matrix by spiral
+
 n = int(input())
 i, j = 0, -1
 max_j, max_i = n - 1, n - 1
