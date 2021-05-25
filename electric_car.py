@@ -49,5 +49,5 @@ mercedes.odometer_reading = 155
 print(mercedes.get_descriptive_name())
 mercedes.update_odometer(300)
 mercedes.increment_odometer(50)
-print(mercedes.read_odometer())
+mercedes.read_odometer())
 
