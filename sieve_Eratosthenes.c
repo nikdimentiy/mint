@@ -11,7 +11,7 @@ int main()
         {
             for(int k = i*i; k < N; k += i)
             {
-                sieve[k] = 1;
+                sieve[k] = 1; // prime number - assignment 0, composite - assignment - 1
             }
         }
 
@@ -19,14 +19,14 @@ int main()
 
     for (int i = 0; i < N; ++i)
     {
-        printf("%4i", i);
+        printf("%4i", i); // output trivial line of numbers
     }
 
     printf("\n");
 
     for (int i = 0; i < N; ++i)
     {
-        printf("%4i", sieve[i]);
+        printf("%4i", sieve[i]); // the output line of algo finding prime numbers ([0], [1])
     }
     printf("\n");
     return 0;
