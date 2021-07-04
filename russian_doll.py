@@ -1,3 +1,5 @@
+# the function represents: classic recursion call (for example: in Russian doll - "Matrioshka")
+
 def doll(n):
     if n == 1:
         print("Tiny doll")
