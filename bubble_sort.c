@@ -1,3 +1,6 @@
+/* Bubble Sort in C is a sorting algorithm where we repeatedly
+  iterate through the array and swap adjacent elements that are unordered.*/
+  
 #include <stdio.h>
 
 void bubble_sort(int a[], int n) {
