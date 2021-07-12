@@ -21,7 +21,8 @@ class Car():
         print("This car has " + str(self.odometer_reading) + " miles on it.")
 
     def update_odometer(self, mileage):
-        """Sets a given value on the odometer. When you try to cheat back, the changes are rejected"""
+        """Sets a given value on the odometer. 
+           When you try to cheat back, the changes are rejected"""
         if mileage >= self.odometer_reading:
             self.odometer_reading = mileage
         else:
@@ -50,7 +51,7 @@ class Battery():
         elif self.battery_size == 85:
             range = 270
         message = "This car can go approximately " + str(range)
-        message += " miles on a full cahrge."
+        message += " miles on a full charge."
         print(message)
 
 
