@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+/*
+    function for carrying out binary search on given array
+    - values[] => given sorted array
+    - len => length of the array
+    - target => value to be searched
+*/
+
 int binarySearch(int values[], int len, int target)
 {
     int max = (len - 1);
