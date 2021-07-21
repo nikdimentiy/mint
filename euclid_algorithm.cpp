@@ -1,3 +1,7 @@
+// The Euclidean algorithm is based on the principle that the greatest common divisor
+// of two numbers does not change if the larger number is replaced by its difference
+// with the smaller number
+
 #include <iostream>
 using namespace std;
 
