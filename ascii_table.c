@@ -1,4 +1,6 @@
 // The program show: uppercase and lowercase letter in ASCII table
+// ASCII stands for American Standard Code for Information Interchange
+
 #include <stdio.h>
 
 int main(void)
