@@ -1,4 +1,7 @@
-// the code represent: arithmetic progression
+// The code represent: arithmetic progression
+// An arithmetic progression or arithmetic sequence is a sequence of numbers,  
+// such that the difference between the consecutive terms is constant
+
 using System;
 
 namespace Softcode
