@@ -1,3 +1,10 @@
+/* binary search - is a search algorithm that finds the position of a target value 
+   within a sorted array. Binary search compares the target value to the middle element of the array. 
+   If they are not equal, the half in which the target cannot lie is eliminated and the search 
+   continues on the remaining half, again taking the middle element to compare to the target value,
+   and repeating this until the target value is found. If the search ends with the remaining half being empty,
+   the target is not in the array */
+
 // binary search:  divide and conquer
 
 #include <stdio.h>
@@ -19,19 +26,21 @@ int main()
 
   first = 0;
   last = n - 1;
-  middle = (first+last)/2;
+  middle = (first + last) / 2;
 
-  while (first <= last) {
+  while (first <= last)
+  {
     if (array[middle] < search)
       first = middle + 1;
-    else if (array[middle] == search) {
-      printf("%d found at location %d.\n", search, middle+1);
+    else if (array[middle] == search)
+    {
+      printf("%d found at location %d.\n", search, middle + 1);
       break;
     }
     else
       last = middle - 1;
 
-    middle = (first + last)/2;
+    middle = (first + last) / 2;
   }
   if (first > last)
     printf("Not found! %d isn't present in the list.\n", search);
