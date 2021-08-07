@@ -1,4 +1,9 @@
 def array_search(A: list, N: int, x: int):
+    """Searching (x) number in an array (A): from zero to (N - 1) index inclusive. 
+       Return the index of the (x) element in the array (A). 
+       If there is no such element in the array, it returns (-1). 
+       If there are several identical elements equal to (x) in an array, it returns the index of the first in the array (A).
+    """
     for k in range(N):
         if A[k] == x:
             return k
