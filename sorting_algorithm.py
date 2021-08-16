@@ -1,3 +1,5 @@
+# implementation of three common sorting algorithms in computer science, with test-cases for each othe
+
 def insert_sort(A):
     """---insert_sort---"""
     N = len(A)
