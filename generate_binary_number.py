@@ -1,3 +1,5 @@
+# the tiny code represent the binary number range (2 in power n) - 1
+
 def gen_bin(number_of_digits: int, prefix=" "):
     if number_of_digits == 0:
         print(prefix)
