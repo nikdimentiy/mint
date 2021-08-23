@@ -1,4 +1,5 @@
 def find(number, A):
+    """Looks for a number in list A and return - True, if there is such a  number, otherwise - False"""
     for x in A:
         if number == x:
             return True
