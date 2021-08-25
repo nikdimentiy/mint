@@ -1,3 +1,5 @@
+// the code represents the stack of a function call
+
 #include <stdio.h>
 
 void A();
