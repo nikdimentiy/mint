@@ -1,3 +1,5 @@
+# The code calculates: which letter appears most often in the entered phrase
+
 s = input("Enter some phrase or string: ")
 anscnt = 0
 symcnt = {}
