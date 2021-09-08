@@ -1,4 +1,5 @@
 // this code calculates and represents the temperature conversion table: Fahrenheit to Celsius
+
 #include <stdio.h>
 
 #define LOWER 0
