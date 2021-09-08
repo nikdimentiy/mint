@@ -1,4 +1,5 @@
 // finding divisors of an entered number
+
 #include <stdio.h>
 
 int main(void) {
