@@ -1,3 +1,5 @@
+// Mini-game: you can guess the number -  for 6 attempts?
+
 package main
 
 import (
