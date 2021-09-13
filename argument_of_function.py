@@ -1,4 +1,5 @@
 # A function (sample) that takes three arguments
+
 def info(object, color, price):
     print('Object:', object)
     print('Color :', color)
