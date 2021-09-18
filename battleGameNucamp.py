@@ -19,8 +19,7 @@ wizard_damage = 150
 elf_damage = 100
 human_damage = 20
 
-# declare the main opponent in the game, and set health point and damage indicator
-dragon = "Dragon"
+# declare the main opponent in the game -> Dragon, and set health point and damage indicator
 dragon_hp = 300
 dragon_damage = 50
 
@@ -49,6 +48,21 @@ while True:
     else:
         print("Unknown character")
 
-print("You have chosen the character: ", character)
+print("You have chosen the character:", character)
 print("Health: ", my_hp)
 print("Damage: ", my_damage)
+
+# battle with Dragon
+while True:
+    dragon_hp -= my_damage
+    print("The", character, "damaged the Dragon!")
+    print("The Dragon's hitpoints are now:", dragon_hp)
+    if dragon_hp <= 0:
+        print("The Dragon has lost the battle")
+        break
+    my_hp -= dragon_damage
+    print("The Dragon strikes back at", character)
+    print("The ", character, "hitpoints are now:", my_hp)
+    if my_hp <= 0:
+        print("The ", character, "has lost the battle")
+        break
