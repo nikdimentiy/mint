@@ -48,7 +48,7 @@ def check_pin_code(pin):
 
         from banking_pkg import account
 
-
+# tiny code realize primitive atm interface of interaction
         def atm_menu(name):
             print("")
             print("          === Automated Teller Machine ===          ")
