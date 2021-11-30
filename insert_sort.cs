@@ -1,3 +1,6 @@
+/* The Insertion Sort Algorithm maintains two sub-lists named sorted sub-list and unsorted sub-list. 
+Through each iteration, the sorted sub-list increased and the unsorted sub-list keeps on decreasing.*/
+
 using System;
 
 namespace Softcode
