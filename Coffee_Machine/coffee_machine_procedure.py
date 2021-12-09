@@ -1,3 +1,6 @@
+# simple code --> of virtual coffee machine in procedure style coding
+
+
 MENU = {
     "espresso": {
         "ingredients": {
@@ -71,7 +74,7 @@ def make_coffee(drink_name, order_ingredients):
     print(f"Here is your {drink_name} ☕️. Enjoy!")
 
 
-is_on = True
+is_on = True # conditions by default to coffee machine work (Turn ON)
 
 while is_on:
     choice = input("​What would you like? (espresso/latte/cappuccino): ")
