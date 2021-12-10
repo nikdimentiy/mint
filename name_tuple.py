@@ -1,4 +1,10 @@
+# Python supports a type of container like dictionaries called “namedtuple()” present in the module, “collections“. 
+# Like dictionaries, they contain keys that are hashed to a particular value. 
+# But on contrary, it supports both access from key-value and iteration, the functionality that dictionaries lack.
+
 from collections import namedtuple
+
+# mini - table of chessmasters players with name, year of birth and rating
 
 Player = namedtuple("Chess_master", ["name", "yearOfBirth", "rating"])
 players = Player("Carlsen", 1990, 2842), Player(
