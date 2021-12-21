@@ -1,4 +1,7 @@
-import turtle as turtle_module
+# Spot paintings (picture of Damien Hirst --> made computer algorithm)
+
+
+import turtle as turtle_module # Turtle module in Standard Python Library
 import random
 
 turtle_module.colormode(255)
