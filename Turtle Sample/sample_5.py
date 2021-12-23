@@ -1,3 +1,5 @@
+# random walk code (using turtle library)
+
 import turtle as t
 import random
 
