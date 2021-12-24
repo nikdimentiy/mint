@@ -1,3 +1,5 @@
+# the mini game: turtle racing (using turtle library)
+
 from turtle import Turtle, Screen
 import random
 
