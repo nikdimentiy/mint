@@ -1,3 +1,6 @@
+#  k*n complexity of the algorithm 
+#  (where k - it's number of unique symbols, n - number of sequence elements)
+
 s = input()
 ans = ""
 anscnt = 0
