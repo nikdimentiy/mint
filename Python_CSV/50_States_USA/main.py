@@ -1,3 +1,5 @@
+# mini game: for learning USA states (input in pop-up window --> American states)
+
 import turtle
 import pandas
 
@@ -20,7 +22,7 @@ while len(guessed_states) < 50:
             if state not in guessed_states:
                 missing_states.append(state)
         new_data = pandas.DataFrame(missing_states)
-        new_data.to_csv("states_to_learn.csv")
+        new_data.to_csv("states_to_learn.csv") # create new csv-file for learning another states of USA 
         break
     if answer_state in all_states:
         guessed_states.append(answer_state)
