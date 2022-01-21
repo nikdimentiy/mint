@@ -1,4 +1,4 @@
-FILE_PATH = '/home/polo/Documents/Workspace/Python/quotes.csv'  # file path in my Linux desctop
+FILE_PATH = '/home/polo/Documents/Workspace/Python/quotes.csv'  # file path in my Linux desktop
 
 with open(FILE_PATH) as file_object:
     for line in file_object:
