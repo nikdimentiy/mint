@@ -1,3 +1,5 @@
+# old classic guessing game for two or more players (implementation in Python code--> game with computer)
+
 import random
 from hangman_art import stages, logo
 from hangman_words import word_list
