@@ -1,3 +1,8 @@
+"""
+    This game has different level and in every level the speed of vehical will be increase
+    Our main target is to control turtle with UP arrow button and help him to cross road
+"""
+
 import time
 from turtle import Screen
 from player import Player
