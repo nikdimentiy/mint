@@ -1,3 +1,6 @@
+# ISS (International Space Station) Overhead Notifier project; 
+# API (EndPoint - http://open-notify.org/Open-Notify-API/ISS-Location-Now/)
+
 import requests
 from datetime import datetime
 import smtplib
