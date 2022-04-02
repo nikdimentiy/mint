@@ -25,8 +25,8 @@ def test_array_search():
         print("#2. Test - Fail")
 
     A3 = [10, 20, 30, 20, 40]
-    m = array_search(A3, 5, 20)
-    if res == 1:
+    res = array_search(A3, 5, 30)
+    if res == 2:
         print("#3. Test - OK")
     else:
         print("#3. Test - Fail")
