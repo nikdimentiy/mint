@@ -3,9 +3,9 @@ def array_search(A: list, N: int, x: int) -> int:
         if A[k] == x and len(A) == N:
             return k
     if len(A) != N:
-    	return None
-    else:
-    	return - 1
+        return None
+    return -1
+
 
 
 def test_array_search():
