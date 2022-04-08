@@ -1,23 +1,23 @@
-def array_search(A: list, N: int, x: int) -> int:
+def array_search(A: list, N: int, x: int):
     for k in range(len(A)):
         if A[k] == x and len(A) == N:
             return k
     if len(A) != N:
         return None
-    return -1
-
+    else:
+        return - 1
 
 
 def test_array_search():
     A1 = [1, 2, 3, 4]
-    res = array_search(A1, 4, 1)
-    if res == -1:
+    res = array_search(A1, 4, -1)
+    if res == -1 and -1 not in A1:
         print("#1. Test - OK")
     else:
         print("#1. Test - Fail")
 
     A2 = [-1, -2, -3, -4, -5]
-    res = array_search(A2, 5, -3)
+    res = array_search(A2, 4, -3)
     if res == 2:
         print("#2. Test - OK")
     else:
@@ -32,5 +32,6 @@ def test_array_search():
 
 
 test_array_search()
+
 
 
