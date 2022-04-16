@@ -1,3 +1,6 @@
+# search: the shortest words in the sequence and display
+# them separated by a space
+
 def shortwords(words):
     minlen = len(words[0])
     for word in words:
