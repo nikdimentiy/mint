@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void bubble_sort(long[], long);
+void bubble_sort(long[], long); // prototype
 int main()
 {
     long array[100], n, c;
@@ -25,7 +25,7 @@ int main()
     return 0;
 }
 
-void bubble_sort(long list[], long n)
+void bubble_sort(long list[], long n) // realization of sorting algorithm
 
 {
     long c, d, t;
