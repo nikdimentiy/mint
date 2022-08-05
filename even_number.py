@@ -1,22 +1,21 @@
 # the program to calculate an even number with functional decomposition
 
+
 def main():
     number = get_int()
     result = isEven(number)
     if result == True:
-        print("You entered a EVEN number!")
+        print("You entered a EVEN number✅")
     else:
-        print("You entered a odd number!")
+        print("You entered a odd number!👍")
 
 
 def get_int():
-    while (True):
+    while True:
         try:
-            number = int(input("Enter integer number, please: "))
-            break
+            return int(input(" 🤠 Enter integer number, please: 🤠 "))
         except ValueError:
-            print("This is not a number. Please enter a number: ")
-    return number
+            print("💢💢💢 This is not a number....please enter a number: 💢💢💢")
 
 
 def isEven(number):
