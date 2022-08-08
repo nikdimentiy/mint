@@ -1,7 +1,6 @@
 
 day = int(input("Enter the number of the day in week: "))
 
-# new feature of Python 3.10 (analog swith-case in Java, C, C++)
 match day:
     case 1:
         print("Monday")
