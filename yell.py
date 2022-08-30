@@ -2,12 +2,12 @@
 
 
 def main():
-    yell("This", "is", "CS50")
+    yell("This", "is", "coding")
 
 
 def yell(*words):
     uppercased = [arg.upper() for arg in words]
-    print(*uppercased)
+    print(*uppercased) # unpacking list
 
 
 if __name__ == "__main__":
