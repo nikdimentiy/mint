@@ -1,3 +1,7 @@
+# The constructor should take an array as an argument, this will contain 3 integers
+# of the form [width, length, height] from which the Block should be created.
+
+
 class Block(object):
     def __init__(self, arr):
         self.width = arr[0]
