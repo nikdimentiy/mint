@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Person struct {
 	name   string
@@ -10,17 +12,31 @@ type Person struct {
 }
 
 func main() {
-	var person_1 Person
+	var pers1 Person
+	var pers2 Person
 
-	// Person specification
-	person_1.name = "Dimas"
-	person_1.age = 40
-	person_1.job = "Software developer"
-	person_1.salary = 250000
+	// Pers1 specification
+	pers1.name = "Hege"
+	pers1.age = 45
+	pers1.job = "Teacher"
+	pers1.salary = 6000
 
-	// Access and print Person info
-	fmt.Println("Name: ", person_1.name)
-	fmt.Printf("The age of %s is: %d\n", person_1.name, person_1.age)
-	fmt.Println("Job -> ", person_1.job)
-	fmt.Println("Salary per year: ", person_1.salary)
+	// Pers2 specification
+	pers2.name = "Cecilie"
+	pers2.age = 24
+	pers2.job = "Marketing"
+	pers2.salary = 4500
+
+	// Print Pers1 info by calling a function
+	printPerson(pers1)
+
+	// Print Pers2 info by calling a function
+	printPerson(pers2)
+}
+
+func printPerson(pers Person) {
+	fmt.Println("Name: ", pers.name)
+	fmt.Println("Age: ", pers.age)
+	fmt.Println("Job: ", pers.job)
+	fmt.Println("Salary: ", pers.salary)
 }
