@@ -6,5 +6,6 @@
 # filter_list([1,'a','b',0,15]) == [1,0,15]
 # filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 
-def filter_list(l):
-    return [i for i in l if type(i) != str]
+def hex_hash(s):
+    h = ''.join(str(hex(ord(x))) for x in s)
+    return sum(int(x) for x in h if x.isdigit())
