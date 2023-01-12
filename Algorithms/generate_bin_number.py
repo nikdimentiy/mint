@@ -2,8 +2,8 @@ def gen_bin(M, prefix=''):
     if M == 0:
         print(prefix)
         return
-    gen_bin(M-1, prefix+'0')
-    gen_bin(M-1, prefix+'1')
+    for digits in "0", "1":
+        gen_bin(M-1, prefix+digits)
 
 
 def generate_number(N: int, M: int, prefix=None):
@@ -21,5 +21,6 @@ def generate_number(N: int, M: int, prefix=None):
         prefix.pop()
 
 
-# gen_bin(8)
-generate_number(2, 5)
+# gen_bin(12)
+generate_number(2, 8)
+
