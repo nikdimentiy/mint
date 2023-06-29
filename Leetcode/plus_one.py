@@ -1,30 +1,38 @@
-# LeetCode task: solution -> https://leetcode.com/problems/plus-one/
-# Preparation to coding interview 
-
+# LeetCode task: solving -> https://leetcode.com/problems/plus-one/description/
+# 😎 Preparation for coding interview 🎯
 
 from typing import List
 
 
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
-        carry = 1  # Initialize the carry variable to 1
-        n = len(digits)  # Get the length of the input list 'digits'
+        """
+        Increments a large integer represented by an array of digits by one.
 
-        # Iterate over the list 'digits' in reverse order
-        for i in range(n - 1, -1, -1):
-            digits[i] += carry  # Add the carry to the current digit
-            carry = digits[i] // 10  # Calculate the new carry value
-            digits[i] %= 10  # Get the remainder after dividing by 10
+        Args:
+            digits (List[int]): The array of digits representing the large integer.
+
+        Returns:
+            List[int]: The resulting array of digits after incrementing the large integer by one.
+        """
+        carry = 1  # Initialize the carry to 1 since we're incrementing by one
+        for i in range(len(digits) - 1, -1, -1):
+            # Iterate over the digits array in reverse order (from least significant to most significant)
+
+            digits[i] += carry  # Increment the current digit by the carry
+            # Update the carry by dividing the current digit by 10
+            carry = digits[i] // 10
+            # Update the current digit by taking the modulo 10 of its value
+            digits[i] %= 10
 
         if carry:
-            # If there is still a carry, insert it at the beginning of the list
-            digits.insert(0, carry)
+            # If carry is still 1, add an additional digit at the most significant position
+            digits.insert(0, 1)
 
-        return digits  # Return the modified 'digits' list
+        return digits
 
 
-digits = [1, 2, 3]  # Input list of digits
-solution = Solution()  # Create an instance of the Solution class
-result = solution.plusOne(digits)  # Call the plusOne method on the instance
-print(result)  # Output the result
-# Output: [1, 2, 4]
+digits = [1, 2, 3]
+solution = Solution()
+result = solution.plusOne(digits)
+print(result)  # Output: [1, 2, 4]
