@@ -1,52 +1,49 @@
-def generate_number(N: int, M: int, prefix=None):
+def gen_bin(M, prefix=""):
     """
-    Generate all possible numbers in N (number system) where N <= 10.
+    Generates binary strings of length M.
+
+    This function recursively generates all possible binary strings of length M,
+    where each digit in the binary string can be either '0' or '1'. The generated
+    binary strings are printed to the console.
 
     Args:
-        N: The number system.
-        M: The length of the number.
-        prefix: A list of digits that have already been generated.
+        M (int): The length of the binary strings to be generated.
+        prefix (str, optional): The prefix to be added to the generated binary strings.
+            Used during the recursive calls. Defaults to an empty string.
 
     Returns:
-        None.
+        None
+
+    Examples:
+        >>> gen_bin(2)
+        00
+        01
+        10
+        11
+
     """
-
-    # Check if the number is complete.
-
     if M == 0:
+        # Base case: When M becomes 0, we have generated a complete binary string.
+        # Print the current prefix (binary string).
         print(prefix)
         return
 
-    # Iterate over all possible digits.
+    # Recursive case: Generate binary strings by appending '0' and '1' to the prefix.
+    # For each digit position, generate two possibilities: '0' and '1'.
+    gen_bin(M-1, prefix+"0")  # Recursively generate binary strings with '0' added.
+    gen_bin(M-1, prefix+"1")  # Recursively generate binary strings with '1' added.
 
-    for digit in range(N):
-        # Add the digit to the prefix.
-        prefix.append(digit)
-
-        # Recurse to generate the next number.
-        generate_number(N, M - 1, prefix)
-
-        # Remove the digit from the prefix.
-        prefix.pop()
-
-
-def gen_bin(M, prefix=''):
-    """Generate all possible binary numbers of length M."""
-
-    # This is a helper function for generate_number.
-
-    if M == 0:
-        print(prefix)
-        return
-
-    for digit in ['0', '1']:
-        gen_bin(M - 1, prefix + digit)
+# Get user input for the length of the binary strings
+try:
+    length = int(input("Enter the length of binary strings: "))
+    if length < 0:
+        raise ValueError("Length should be a non-negative integer.")
+    
+    gen_bin(length)  # Generates and prints all binary strings of the given length.
+except ValueError as e:
+    print("Error:", e)
 
 
-# Example usage
-
-print('Generate all binary numbers of length 8:')
-generate_number(2, 8)
 
 print('Generate all binary numbers of length 12:')
 gen_bin(12)
