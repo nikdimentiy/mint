@@ -25,6 +25,6 @@ func main() {
 
     // Print the contents of the two slices and the copied length.
     fmt.Println(slice1) // Output: [hello developer]
-    fmt.Println(slice2) // Output: [c d c d e]
-    fmt.Println(len_array)
+    fmt.Println(slice2) // Output: [a b c d e]
+    fmt.Println(len_array) // 5
 }
