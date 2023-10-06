@@ -1,4 +1,4 @@
-# Hello, I'm Dmitriy Nikey! 👋
+# Hello, I'm Dmytro Nikey! 👋
 
 🚀 Welcome to my GitHub profile! 🚀
 
