@@ -17,3 +17,22 @@ def reverse_string(string):
 original_string = "Hello, World!"
 reversed_string = reverse_string(original_string)
 print(reversed_string)
+
+# another variant of reverse string -->
+def reverse_string(string):
+    """
+    Reverse the characters in a given string.
+    
+    Args:
+        string (str): The input string to be reversed.
+        
+    Returns:
+        str: The reversed string.
+    """
+    return ''.join(reversed(string))  # Reverse the string using the `reversed` function and join the characters back together
+
+# Example usage
+original_string = "Hello, World!"
+reversed_string = reverse_string(original_string)
+print(reversed_string)
+
