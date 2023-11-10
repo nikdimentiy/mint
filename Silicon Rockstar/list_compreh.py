@@ -1,6 +1,13 @@
+# This code creates a list of tuples (x, y) where x and y are integers ranging from 0 to 2, 
+# with the condition that y is greater than or equal to x.
+
+# Define a list comprehension to generate the desired list of tuples.
 z = [(x, y) for x in range(3) for y in range(3) if y >= x]
+
+# Print the resulting list.
 print(z)
 
+# another way -->
 
 def generate_z():
     """
