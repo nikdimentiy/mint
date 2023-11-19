@@ -1,48 +1,28 @@
-my_string = input()
-answer = ""
-answer_count = 0
-for i in range(len(my_string)):
-    now_count = 0
-    for j in range(len(my_string)):
-        if my_string[i] == my_string[j]:
-            now_count += 1
-        if now_count > answer_count:
-            answer = my_string[i]
-            answer_count = now_count
-print(answer)  # Big O notation = O(n^2)
+"""
+This program takes a string as input and finds the most common character in the string
+along with the number of occurrences of that character.
+"""
 
-######################################################################################
-my_string = input()
-answer = ""
-answer_count = 0
-for letter in set(my_string):
-    now_count = 0
-    for j in range(len(my_string)):
-        if letter == my_string[j]:
-            now_count += 1
-        if now_count > answer_count:
-            answer = letter
-            answer_count = now_count
-print(answer)  # Big O notation = O(n K), where "K" is the number of different symbols
+# Get user input
+my_string = input("Enter some string sequence: ")
 
-#####################################################################################
+# Initialize variables and data structures
+answer = ""           # Variable to store the most common character
+answer_count = 0      # Variable to store the count of the most common character
+my_dictionary = {}    # Dictionary to store character occurrences
 
-# user input, define variables and constant
-my_string = input("Enter the some string sequence: ")
-answer = ""
-answer_count = 0
-my_dictionary = {}
-
-# computation logic (algorithm)
+# Compute character occurrences
 for now in my_string:
     if now not in my_dictionary:
         my_dictionary[now] = 0
     my_dictionary[now] += 1
+
+# Find the most common character and its count
 for key in my_dictionary:
     if my_dictionary[key] > answer_count:
         answer_count = my_dictionary[key]
         answer = key
 
-# output result
+# Output the result
 print(f"The most common sequence character is: {answer}")  # Big O notation = O(n)
-print(f"The number of occurrences of this symbol in the sequence is: : {answer_count}")
+print(f"The number of occurrences of this symbol in the sequence is: {answer_count}")
