@@ -1,6 +1,7 @@
 from tkinter import *
 import math
-# ---------------------------- CONSTANTS ------------------------------- #
+
+# Constants
 PINK = "#e2979c"
 RED = "#e7305b"
 GREEN = "#9bdeac"
@@ -12,10 +13,11 @@ LONG_BREAK_MIN = 20
 reps = 0
 timer = None
 
-# ---------------------------- TIMER RESET ------------------------------- #
-
-
+# Function to reset the timer
 def reset_timer():
+    """
+    Reset the timer to initial values and update the UI.
+    """
     window.after_cancel(timer)
     canvas.itemconfig(timer_text, text="00:00")
     title_label.config(text="Timer")
@@ -23,10 +25,11 @@ def reset_timer():
     global reps
     reps = 0
 
-
-# ---------------------------- TIMER MECHANISM ------------------------------- #
-
+# Timer Mechanism
 def start_timer():
+    """
+    Start the timer based on work, short break, and long break intervals.
+    """
     global reps
     reps += 1
 
@@ -44,10 +47,11 @@ def start_timer():
         count_down(work_sec)
         title_label.config(text="Work", fg=GREEN)
 
-
-# ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
+# Countdown Mechanism
 def count_down(count):
-
+    """
+    Update the countdown on the UI and manage the timer logic.
+    """
     count_min = math.floor(count / 60)
     count_sec = count % 60
     if count_sec < 10:
@@ -65,14 +69,12 @@ def count_down(count):
             marks += "✅"
         check_marks.config(text=marks)
 
-
-# ---------------------------- UI SETUP ------------------------------- #
+# UI Setup
 window = Tk()
 window.title("Pomodoro")
 window.config(padx=100, pady=50, bg=YELLOW)
 
-
-title_label = Label(text="Timer", fg=GREEN, bg=YELLOW, font=(FONT_NAME, 50))
+title_label = Label(text="🍅 Timer", fg=GREEN, bg=YELLOW, font=(FONT_NAME, 50))
 title_label.grid(column=1, row=0)
 
 canvas = Canvas(width=200, height=224, bg=YELLOW, highlightthickness=0)
@@ -82,14 +84,13 @@ timer_text = canvas.create_text(
     100, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold"))
 canvas.grid(column=1, row=1)
 
-start_button = Button(text="Start", highlightthickness=0, command=start_timer)
+start_button = Button(text="Start ▶️", highlightthickness=0, command=start_timer)
 start_button.grid(column=0, row=2)
 
-reset_button = Button(text="Reset", highlightthickness=0, command=reset_timer)
+reset_button = Button(text="Reset 🔄", highlightthickness=0, command=reset_timer)
 reset_button.grid(column=2, row=2)
 
 check_marks = Label(fg=GREEN, bg=YELLOW)
 check_marks.grid(column=1, row=3)
-
 
 window.mainloop()
