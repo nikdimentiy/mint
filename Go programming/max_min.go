@@ -1,47 +1,55 @@
 package main
 
 import (
-    "fmt"       // Importing the fmt package for formatted I/O
-    "os"        // Importing the os package to use command line arguments and exit the program
-    "strconv"   // Importing the strconv package to convert strings to floats
+	"errors" // Importing the errors package to handle errors
+	"fmt"    // Importing the fmt package for formatted I/O
+	"os"     // Importing the os package to use operating system functionality
+	"strconv" // Importing the strconv package for string conversion
 )
 
 // The main function is the entry point of the program
 func main() {
-    // os.Args holds the command line arguments, the first one is the program name
-    arguments := os.Args
+	// Check if at least one argument is passed
+	if len(os.Args) == 1 {
+		fmt.Println("Please give one or more floats.")
+		os.Exit(1) // Exit the program if no arguments are provided
+	}
 
-    // Check if at least one argument is provided (excluding the program name)
-    if len(arguments) < 2 {
-        fmt.Println("Please provide one or more floats.")
-        os.Exit(1) // Exit the program with status code 1 indicating an error
-    }
+	arguments := os.Args // Retrieve the arguments passed to the program
+	var min, max float64 // Declare variables to store the minimum and maximum values
+	var n float64        // Declare a variable to store the current number being checked
+	var err error = errors.New("An error") // Initialize an error variable with a default error
 
-    // Try to convert the first argument to a float64, assuming it as both min and max initially
-    min, err := strconv.ParseFloat(arguments[1], 64)
-    if err != nil {
-        fmt.Println("Error parsing float:", err) // Print the error if conversion fails
-        os.Exit(1) // Exit the program with status code 1 indicating an error
-    }
-    max := min // Set max to the same value as min initially
+	k := 1 // Start from the second argument (index 1), as the first is the program name
+	// Loop to find the first valid float argument
+	for err != nil {
+		if k >= len(arguments) {
+			fmt.Println("None of the arguments is a float!")
+			return // Exit the function if no valid float is found
+		}
+		// Try to convert the argument to a float64
+		n, err = strconv.ParseFloat(arguments[k], 64)
+		k++ // Move to the next argument
+	}
 
-    // Iterate over the remaining arguments starting from the second one
-    for _, arg := range arguments[2:] {
-        num, err := strconv.ParseFloat(arg, 64) // Convert each argument to float64
-        if err != nil {
-            fmt.Println("Error parsing float:", err) // Print the error if conversion fails
-            os.Exit(1) // Exit the program with status code 1 indicating an error
-        }
-        // Update min and max if the current number is smaller or larger, respectively
-        if num < min {
-            min = num
-        }
-        if num > max {
-            max = num
-        }
-    }
+	min = n // Set the first valid float as the initial minimum
+	max = n // Set the first valid float as the initial maximum
 
-    // Print the minimum and maximum values found
-    fmt.Println("Minimum:", min)
-    fmt.Println("Maximum:", max)
+	// Loop through the rest of the arguments starting from the third
+	for i := 2; i < len(arguments); i++ {
+		// Try to convert the argument to a float64
+		n, err := strconv.ParseFloat(arguments[i], 64)
+		if err == nil { // If conversion is successful
+			if n < min { // Check if the current number is less than the current minimum
+				min = n // Update the minimum
+			}
+			if n > max { // Check if the current number is greater than the current maximum
+				max = n // Update the maximum
+			}
+		}
+	}
+
+	// Print the minimum and maximum values
+	fmt.Println("Minimum:", min)
+	fmt.Println("Maximum:", max)
 }
