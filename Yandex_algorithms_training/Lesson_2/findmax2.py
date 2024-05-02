@@ -1,4 +1,4 @@
-def findmax2(seq: list[int]) -> tuple[int, int | None]:
+def findmax2(seq):
     """
     Find the two maximum values in a list of integers.
     Returns a tuple (max1, max2), where max1 is the maximum value and max2 is the second maximum value.
