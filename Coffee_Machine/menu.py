@@ -1,18 +1,22 @@
 class MenuItem:
-    """Models each Menu Item."""
+    """Models each individual item on the coffee menu, including its name, ingredients, and cost."""
+    
     def __init__(self, name, water, milk, coffee, cost):
+        # Initialize the name, cost, and ingredient requirements for the menu item
         self.name = name
         self.cost = cost
         self.ingredients = {
-            "water": water,
-            "milk": milk,
-            "coffee": coffee
+            "water": water,  # Amount of water required for this menu item
+            "milk": milk,  # Amount of milk required for this menu item
+            "coffee": coffee  # Amount of coffee required for this menu item
         }
 
 
 class Menu:
-    """Models the Menu with drinks."""
+    """Represents the coffee machine's menu, which contains multiple drink items."""
+    
     def __init__(self):
+        # Create a list of predefined menu items available for ordering
         self.menu = [
             MenuItem(name="latte", water=200, milk=150, coffee=24, cost=2.5),
             MenuItem(name="espresso", water=50, milk=0, coffee=18, cost=1.5),
@@ -20,15 +24,21 @@ class Menu:
         ]
 
     def get_items(self):
-        """Returns all the names of the available menu items"""
-        options = ""
-        for item in self.menu:
-            options += f"{item.name}/"
+        """Returns a string with the names of all available menu items, separated by slashes."""
+        options = "/".join([item.name for item in self.menu])  # Concatenate all item names with a slash separator
         return options
 
     def find_drink(self, order_name):
-        """Searches the menu for a particular drink by name. Returns that item if it exists, otherwise returns None"""
+        """
+        Searches the menu for a particular drink by its name.
+        Returns the corresponding MenuItem object if found.
+        If the drink does not exist, prints a message and returns None.
+        """
+        # Loop through the menu to find a matching item
         for item in self.menu:
-            if item.name == order_name:
-                return item
-        print("Sorry that item is not available.")
+            if item.name.lower() == order_name.lower():  # Case-insensitive comparison for better user experience
+                return item  # Return the matching menu item
+
+        # If no item matches, print a message and return None
+        print("Sorry, that item is not available.")
+        return None
