@@ -1,37 +1,41 @@
-// king move in chess cell (the possibility of attack)
-
 using System;
 
-namespace Prime
+namespace Chess
 {
+    /// <summary>
+    /// This program checks if a chess cell is within the attack range of a king on a chessboard.
+    /// </summary>
     class MainClass
     {
+        /// <summary>
+        /// Main method to execute the program.
+        /// </summary>
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter the king coordinates: ");
-            int row1, column1;
+            int kingRow, kingColumn;
 
             Console.WriteLine("Enter row of the king: ");
-            row1 = Convert.ToInt32(Console.ReadLine());
+            kingRow = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter column of the king: ");
-            column1 = Convert.ToInt32(Console.ReadLine());
-
+            kingColumn = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter coordinates of the chess cell");
-            int row2, column2;
+            int cellRow, cellColumn;
 
             Console.WriteLine("Enter row of the chess cell:");
-            row2 = Convert.ToInt32(Console.ReadLine());
+            cellRow = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter column of the chess cell:");
-            column2 = Convert.ToInt32(Console.ReadLine());
+            cellColumn = Convert.ToInt32(Console.ReadLine());
 
-            if (Math.Abs(row1 - column1) <= 1 && Math.Abs(row2 - column2) <= 1)
+            // Check if the chess cell is within the attack range of the king
+            if (Math.Abs(kingRow - cellRow) <= 1 && Math.Abs(kingColumn - cellColumn) <= 1)
             {
-                Console.WriteLine("YES");
+                Console.WriteLine("The chess cell is within the attack range of the king: YES");
             }
             else
             {
-                Console.WriteLine("NO");
+                Console.WriteLine("The chess cell is not within the attack range of the king: NO");
             }
 
             Console.ReadKey();
