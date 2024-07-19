@@ -1,37 +1,42 @@
-// knight move (chess - possible attack)
 using System;
 
-namespace Softcode
+namespace Chess
 {
+    /// <summary>
+    /// This program checks if a chess piece (knight) can attack a given chess cell based on its coordinates.
+    /// </summary>
     class MainClass
     {
+        /// <summary>
+        /// Main method to execute the program.
+        /// </summary>
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter the knight coordinates: ");
-            int row1, column1;
+            int knightRow, knightColumn;
 
             Console.WriteLine("Enter row of the knight: ");
-            row1 = Convert.ToInt32(Console.ReadLine());
+            knightRow = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter column of the knight: ");
-            column1 = Convert.ToInt32(Console.ReadLine());
-
+            knightColumn = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter coordinates of the chess piece");
-            int row2, column2;
+            int pieceRow, pieceColumn;
 
             Console.WriteLine("Enter row of the chess piece:");
-            row2 = Convert.ToInt32(Console.ReadLine());
+            pieceRow = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter column of the chess piece:");
-            column2 = Convert.ToInt32(Console.ReadLine());
+            pieceColumn = Convert.ToInt32(Console.ReadLine());
 
-            if (Math.Abs(row1 - row2) == 2 && Math.Abs(column1 - column2) == 1 ||
-                Math.Abs(row1 - row2) == 1 && Math.Abs(column1 - column2) == 2)
+            // Check if the knight can attack the chess piece based on its movement pattern
+            if ((Math.Abs(knightRow - pieceRow) == 2 && Math.Abs(knightColumn - pieceColumn) == 1) ||
+                (Math.Abs(knightRow - pieceRow) == 1 && Math.Abs(knightColumn - pieceColumn) == 2))
             {
-                Console.WriteLine("YES");
+                Console.WriteLine("The knight can attack the chess piece: YES");
             }
             else
             {
-                Console.WriteLine("NO");
+                Console.WriteLine("The knight cannot attack the chess piece: NO");
             }
         }
     }
