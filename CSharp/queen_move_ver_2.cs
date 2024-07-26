@@ -1,31 +1,37 @@
-// queen move (chess - possible attack)
-
-using System;
+*using System;
 
 namespace Softcode
 {
     class MainClass
     {
+        /// <summary>
+        /// This program checks if a queen in chess can attack a given chess piece based on their coordinates.
+        /// </summary>
         public static void Main(string[] args)
         {
+            // Get the coordinates of the queen
             Console.WriteLine("Enter the queen coordinates: ");
-            int row1, column1;
+            int queenRow, queenColumn;
 
             Console.WriteLine("Enter row of the queen: ");
-            row1 = Convert.ToInt32(Console.ReadLine());
+            queenRow = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter column of the queen: ");
-            column1 = Convert.ToInt32(Console.ReadLine());
+            queenColumn = Convert.ToInt32(Console.ReadLine());
 
-
+            // Get the coordinates of the chess piece
             Console.WriteLine("Enter coordinates of the chess piece");
-            int row2, column2;
+            int pieceRow, pieceColumn;
 
             Console.WriteLine("Enter row of the chess piece:");
-            row2 = Convert.ToInt32(Console.ReadLine());
+            pieceRow = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter column of the chess piece:");
-            column2 = Convert.ToInt32(Console.ReadLine());
+            pieceColumn = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write(row1 == row2 || column1 == column2 || Math.Abs(row1 - row2) == Math.Abs(column1 - column2) ? "YES" : "NO");
+            // Check if the queen can attack the chess piece
+            bool canAttack = queenRow == pieceRow || queenColumn == pieceColumn || Math.Abs(queenRow - pieceRow) == Math.Abs(queenColumn - pieceColumn;
+
+            // Output the result
+            Console.WriteLine(canAttack ? "YES" : "NO");
 
             Console.ReadKey();
         }
