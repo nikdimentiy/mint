@@ -1,40 +1,64 @@
-// this code - is a binary conversion (with cycle)
 using System;
 
 namespace Softcode
 {
     class MainClass
     {
+        /// <summary>
+        /// Converts a decimal integer to its binary representation.
+        /// This method uses a cycle-based approach to perform the conversion.
+        /// </summary>
+        /// <param name="args">Command-line arguments (not used)</param>
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter integer number: ");
-            int n = Convert.ToInt32(Console.ReadLine());
             
-            // defining the invertedNumberInBits variable to get the number in bits and the count counter:
-            
+            // Read user input and convert it to an integer
+            if (!int.TryParse(Console.ReadLine(), out int n))
+            {
+                Console.WriteLine("Invalid input. Please enter a valid integer.");
+                return;
+            }
+
+            // Handle negative numbers
+            bool isNegative = n < 0;
+            n = Math.Abs(n);
+
+            // Variables to store the inverted binary representation and digit count
             int invertedNumberInBits = 0;
             int count = 0;
-            
-            // We get the number in bits by getting the remainder of the division by 2 (it is either 0 or 1),
-            // but it will be inverted and immediately read the number of digits of the inverted number
-            // in bits to display it later on the screen:
-            
+
+            // Convert decimal to binary (inverted)
             while (n > 0)
             {
                 invertedNumberInBits = invertedNumberInBits * 10 + n % 2;
                 n /= 2;
                 count++;
             }
-            
-            // We output the inverted number in bits, starting from the end to the console, when it is output,
-            // it will turn over again, actually, we will get what we are looking for: */
-            
-            while (count > 0)
+
+            // Print the binary representation
+            if (isNegative)
             {
-                Console.Write(invertedNumberInBits % 10);
-                invertedNumberInBits /= 10;
-                count--;
+                Console.Write("-");
             }
+
+            // Handle the case when input is 0
+            if (count == 0)
+            {
+                Console.Write("0");
+            }
+            else
+            {
+                // Print the binary digits in correct order
+                while (count > 0)
+                {
+                    Console.Write(invertedNumberInBits % 10);
+                    invertedNumberInBits /= 10;
+                    count--;
+                }
+            }
+
+            Console.WriteLine(); // Add a newline for better formatting
         }
     }
 }
