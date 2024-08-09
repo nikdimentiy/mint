@@ -1,4 +1,17 @@
 def solution(grid, path):
+    """
+    Simulates a game of 2048 based on the given grid and path of arrow key presses.
+
+    Args:
+        grid (list of lists): A 4x4 grid representing the initial state of the game.
+        path (str): A string of 'U', 'D', 'L', and 'R' characters representing the sequence of arrow key presses.
+
+    Returns:
+        list of lists: The final state of the game grid after applying the given path of arrow key presses.
+
+    Notes:
+        The game is simulated by iterating over the arrow key presses in the path, applying the corresponding transformations to the grid, and merging adjacent tiles with the same value.
+    """
     # iterate over the arrow key presses in the path
     for d in path:
         # if the direction is Up or Down, transpose the grid
@@ -38,3 +51,19 @@ def solution(grid, path):
         grid = ngrid
     # return the final state of the game grid
     return grid
+
+# Driver code
+grid = [
+    [2, 0, 0, 0],
+    [0, 2, 0, 0],
+    [0, 0, 2, 0],
+    [0, 0, 0, 2]
+]
+path = "ULDR"
+print("Initial grid:")
+for row in grid:
+    print(row)
+print("\nPath:", path)
+print("\nFinal grid:")
+for row in solution(grid, path):
+    print(row)
