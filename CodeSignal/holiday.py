@@ -1,18 +1,19 @@
 from typing import List
 
-
 def solution(x: int, weekDay: str, month: str, yearNumber: int) -> int:
     """
-    Calculates the day of the month on which a holiday will be celebrated in a given year.
+    Calculates the day of the month on which a specified occurrence of a holiday will be celebrated 
+    in a given year based on the day of the week.
 
     Args:
-    - x (int): a positive integer representing the occurrence of the day of the week within the month.
-    - weekDay (str): a string representing the name of a day of the week.
-    - month (str): a string representing the name of a month.
-    - yearNumber (int): an integer representing the year for which to calculate the holiday date.
+    - x (int): A positive integer representing the occurrence of the day of the week within the month (1 for the first occurrence, 2 for the second, etc.).
+    - weekDay (str): A string representing the name of a day of the week (e.g., "Monday", "Tuesday").
+    - month (str): A string representing the name of a month (e.g., "January", "February").
+    - yearNumber (int): An integer representing the year for which to calculate the holiday date.
 
     Returns:
-    - int: the day of the month on which the holiday will be celebrated in the given year, or -1 if there is no answer.
+    - int: The day of the month on which the holiday will be celebrated in the given year, 
+           or -1 if there is no such occurrence in that month.
     """
 
     # Define a dictionary to map month names to their corresponding lengths.
@@ -49,8 +50,7 @@ def solution(x: int, weekDay: str, month: str, yearNumber: int) -> int:
     month_length = month_lengths[month]
 
     # Check if the year is a leap year.
-    is_leap_year = (yearNumber % 4 == 0 and yearNumber %
-                    100 != 0) or yearNumber % 400 == 0
+    is_leap_year = (yearNumber % 4 == 0 and yearNumber % 100 != 0) or yearNumber % 400 == 0
 
     # Adjust the length of February if it's a leap year.
     if month == "February" and is_leap_year:
@@ -66,3 +66,11 @@ def solution(x: int, weekDay: str, month: str, yearNumber: int) -> int:
 
     # If there were not enough occurrences of the day of the week, return -1.
     return -1
+
+# Driver code to test the solution function
+if __name__ == "__main__":
+    # Example test cases
+    print(solution(1, "Monday", "January", 2023))  # Expected output: 2 (1st Monday of January 2023)
+    print(solution(2, "Wednesday", "February", 2024))  # Expected output: 14 (2nd Wednesday of February 2024)
+    print(solution(3, "Friday", "March", 2023))  # Expected output: 17 (3rd Friday of March 2023)
+    print(solution(5, "Sunday", "April", 2023))  # Expected output: -1 (5th Sunday of April 2023 does not exist)
