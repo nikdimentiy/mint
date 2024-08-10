@@ -8,6 +8,10 @@ def solution(bd: str) -> int:
 
     Returns:
     - int: An integer describing the number of years until the birthday falls on the same day of the week.
+
+    Notes:
+    - This function assumes that the input date is valid and in the correct format.
+    - The function uses the Gregorian calendar, which is the most widely used calendar in the world.
     """
 
     m, d, y = [int(i) for i in bd.split('-')]
@@ -31,3 +35,18 @@ def solution(bd: str) -> int:
             break
 
     return next_y - y
+
+
+# Driver code
+if __name__ == "__main__":
+    # Test cases
+    test_cases = [
+        ("02-29-2020", 4),  # Leap day
+        ("12-25-2020", 6),  # Non-leap day
+        ("01-01-2020", 5),  # Non-leap day
+    ]
+
+    for bd, expected in test_cases:
+        result = solution(bd)
+        print(f"Input: {bd}, Expected: {expected}, Result: {result}")
+        assert result == expected, f"Test case failed: {bd}"
