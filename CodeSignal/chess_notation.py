@@ -1,3 +1,5 @@
+from typing import List
+
 def expand(notation: str) -> str:
     """
     Replaces the digits in the notation with that number of 1s.
@@ -50,6 +52,10 @@ def solution(notation: str) -> str:
 
     Returns:
     A string representing the rotated chess board position in John's notation.
+    
+    Example:
+    If the input notation is "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+    the output will be "RNBQKBNR/PPPPPPPP/8/8/8/8/pppppppp/rnbqkbnr".
     """
     # Expand notation by replacing digits with that number of 1s
     expanded = expand(notation)
@@ -61,3 +67,20 @@ def solution(notation: str) -> str:
     contracted = contract('/'.join(transposed))
 
     return contracted
+
+
+# Driver code to demonstrate the functionality
+if __name__ == "__main__":
+    # Example chess board position in John's notation
+    notation = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR"
+    
+    # Print the original notation
+    print("Original Notation:")
+    print(notation)
+    
+    # Get the rotated notation
+    rotated_notation = solution(notation)
+    
+    # Print the rotated notation
+    print("\nRotated Notation:")
+    print(rotated_notation)
