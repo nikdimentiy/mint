@@ -75,11 +75,11 @@ When you run the script, it will display the results in a formatted table:
 |       zodiacs       |                 26                  |
 |      strength       |                 92                  |
 |        cozy         |                 34                  |
-|       xyzzy        |                 75                  |
+|       xyzzy         |                 75                  |
 |       zodiac        |                 26                  |
 |  chruschtschov      |                104                  |
 |     khrushchev      |                 96                  |
-|   twelfthstreet      |                108                  |
+|   twelfthstreet     |                108                  |
 |  mischtschenkoana   |                145                  |
 +---------------------+-------------------------------------+
 ```
