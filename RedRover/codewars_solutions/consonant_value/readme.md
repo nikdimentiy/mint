@@ -56,12 +56,12 @@ The script uses PrettyTable to display results in a formatted table:
 +------------------+-----------------------------------+
 |     zodiacs      |                 26                |
 |     strength     |                 57                |
-|       cozy       |                 22                |
-|      xyzzy       |                 72                |
+|       cozy       |                 51                |
+|      xyzzy       |                 126               |
 |      zodiac      |                 26                |
-|  chruschtschov   |                104                |
-|    khrushchev    |                 80                |
-|  twelfthstreet   |                 73                |
+|  chruschtschov   |                 80                |
+|    khrushchev    |                 38                |
+|  twelfthstreet   |                 103               |
 | mischtschenkoana |                 80                |
 +------------------+-----------------------------------+
 ```
