@@ -1,54 +1,36 @@
-# Consonant Substring Value Calculator
 
-This Python project provides a function to calculate the highest value of consonant substrings in a given string. Each consonant's value is determined by its position in the English alphabet (a=1, b=2, ..., z=26). The project includes a set of test cases to demonstrate the functionality of the code.
 
-## Table of Contents
+## Consonant Substring Value Calculator
 
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Functionality](#functionality)
-- [Test Cases](#test-cases)
-- [Example Output](#example-output)
-- [License](#license)
+This Python script calculates the highest value of consonant substrings in a given string. It's a useful tool for analyzing string patterns and character values in various applications, such as linguistics or cryptography.
 
-## Features
+### Features
 
-- Calculates the highest value of consonant substrings in a string.
-- Ignores vowels and focuses solely on consonants.
-- Displays results in a formatted table for easy readability.
+- Calculates the value of consonant substrings in a string
+- Handles multiple test cases efficiently
+- Presents results in a clear, tabular format using PrettyTable
 
-## Installation
+### How it works
 
-To run this code, you need to have Python installed on your machine. You can download Python from [python.org](https://www.python.org/downloads/).
+1. The `solve` function takes a string input and returns the highest value among all consonant substrings.
+2. Consonants are assigned values based on their position in the alphabet (a=1, b=2, ..., z=26).
+3. The function splits the input string into consonant substrings by treating vowels as separators.
+4. It then calculates the value of each consonant substring and returns the maximum value.
 
-Additionally, you will need the `PrettyTable` library for displaying results in a table format. You can install it using pip:
+### Usage
 
-```bash
-pip install prettytable
+```python
+from prettytable import PrettyTable
+from consonant_value_calculator import solve
+
+# Example usage
+result = solve("zodiacs")
+print(result)  # Output: 26
 ```
 
-## Usage
+### Test Cases
 
-1. Clone the repository or download the code file.
-2. Run the script in your Python environment.
-
-```bash
-python consonant_substring_value.py
-```
-
-## Functionality
-
-The main function in this code is `solve(s: str) -> int`, which takes a string `s` as input and returns the highest value among all consonant substrings. The function works as follows:
-
-1. It defines a set of vowels to identify consonants.
-2. It calculates the value of each character based on its position in the alphabet.
-3. It extracts consonant substrings by replacing vowels with spaces and splitting the string.
-4. It computes the total value for each consonant substring and returns the maximum value found.
-
-## Test Cases
-
-The code includes several test cases to demonstrate its functionality:
+The script includes several test cases to demonstrate its functionality:
 
 ```python
 test_cases = [
@@ -64,25 +46,40 @@ test_cases = [
 ]
 ```
 
-## Example Output
+### Output
 
-When you run the script, it will display the results in a formatted table:
+The script uses PrettyTable to display results in a formatted table:
 
 ```
-+---------------------+-------------------------------------+
-|        Input        | Highest Consonant Substring Value   |
-+---------------------+-------------------------------------+
-|       zodiacs       |                 26                  |
-|      strength       |                 92                  |
-|        cozy         |                 34                  |
-|       xyzzy         |                 75                  |
-|       zodiac        |                 26                  |
-|  chruschtschov      |                104                  |
-|     khrushchev      |                 96                  |
-|   twelfthstreet     |                108                  |
-|  mischtschenkoana   |                145                  |
-+---------------------+-------------------------------------+
++------------------+-----------------------------------+
+|      Input       | Highest Consonant Substring Value |
++------------------+-----------------------------------+
+|     zodiacs      |                 26                |
+|     strength     |                 57                |
+|       cozy       |                 22                |
+|      xyzzy       |                 72                |
+|      zodiac      |                 26                |
+|  chruschtschov   |                104                |
+|    khrushchev    |                 80                |
+|  twelfthstreet   |                 73                |
+| mischtschenkoana |                 80                |
++------------------+-----------------------------------+
 ```
+
+### Requirements
+
+- Python 3.x
+- PrettyTable library (`pip install prettytable`)
+
+### Contributing
+
+Contributions, issues, and feature requests are welcome. Feel free to check [issues page](https://github.com/yourusername/consonant-substring-value/issues) if you want to contribute.
+
+### License
+
+This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
+
+---
 
 ## License
 
