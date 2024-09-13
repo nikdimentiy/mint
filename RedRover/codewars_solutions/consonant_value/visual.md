@@ -54,5 +54,3 @@ Input: "strength"
 │
 └─ Result: 57
 ```
-
-Link to GitBook: https://app.gitbook.com/o/AHbYH664upZMM8d0dgms/s/JWqx9GhfRMQPD2OFaGMr/
