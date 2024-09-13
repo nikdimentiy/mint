@@ -1,6 +1,7 @@
 from prettytable import PrettyTable
 
-def solve(s: str) -> int:
+
+def solve(user_string: str) -> int:
     """
     Calculate the highest value of consonant substrings in a given string.
 
@@ -12,24 +13,24 @@ def solve(s: str) -> int:
     """
     vowels = set("aeiou")
 
-    def char_value(c):
+    def char_value(char: str) -> int:
         """Calculate the value of a character (a=1, b=2, ..., z=26)."""
-        return ord(c) - ord("a") + 1
+        return ord(char) - ord("a") + 1
 
-    def substring_value(sub):
+    def substring_value(substring: str) -> int:
         """Calculate the total value of a substring."""
         total_value = 0
-        for c in sub:
-            total_value += char_value(c)
+        for char in substring:
+            total_value += char_value(char)
         return total_value
 
     # Replace vowels with spaces and split the string into consonant substrings
     consonant_substrings = []
     current_substring = ""
 
-    for c in s:
-        if c not in vowels:
-            current_substring += c
+    for character in user_string:
+        if character not in vowels:
+            current_substring += character
         else:
             if current_substring:
                 consonant_substrings.append(current_substring)
@@ -52,17 +53,18 @@ def solve(s: str) -> int:
 
     return max_value
 
+
 # Test cases with additional strings
 test_cases = [
-    "zodiacs",        # 7 letters
-    "strength",       # 8 letters
-    "cozy",           # 4 letters
-    "xyzzy",          # 5 letters
-    "zodiac",         # 6 letters
+    "zodiacs",  # 7 letters
+    "strength",  # 8 letters
+    "cozy",  # 4 letters
+    "xyzzy",  # 5 letters
+    "zodiac",  # 6 letters
     "chruschtschov",  # 12 letters
-    "khrushchev",     # 10 letters
+    "khrushchev",  # 10 letters
     "twelfthstreet",  # 12 letters
-    "mischtschenkoana" # 15 letters
+    "mischtschenkoana"  # 15 letters
 ]
 
 # Calculate results for all test cases
