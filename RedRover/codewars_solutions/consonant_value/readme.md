@@ -1,66 +1,89 @@
 # Consonant Substring Value Calculator
 
-This Python script calculates the highest value of consonant substrings from a list of strings. The value of each consonant substring is determined by summing the positions of the letters in the alphabet (where 'a' = 1, 'b' = 2, ..., 'z' = 26). Additionally, the script creates a beautiful bar chart to visually display the highest values of consonant substrings for each test case. 🎉📊
+This Python project provides a function to calculate the highest value of consonant substrings in a given string. Each consonant's value is determined by its position in the English alphabet (a=1, b=2, ..., z=26). The project includes a set of test cases to demonstrate the functionality of the code.
 
-## Key Features
+## Table of Contents
 
-- **Consonant Value Calculation**: The script replaces vowels with spaces to highlight consonant substrings and then computes their total value.
-- **Result Visualization**: Using the `matplotlib` library, a bar chart is created to show the highest values of consonant substrings for each input string.
-- **User-Friendly Output**: Results are displayed in a neat table using the `PrettyTable` library, making them easy to read. 📋✨
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Functionality](#functionality)
+- [Test Cases](#test-cases)
+- [Example Output](#example-output)
+- [License](#license)
 
-## How to Run the Script
+## Features
 
-To run this script and see the results, follow these simple steps:
+- Calculates the highest value of consonant substrings in a string.
+- Ignores vowels and focuses solely on consonants.
+- Displays results in a formatted table for easy readability.
 
-1. **Install Required Libraries**:
-   Make sure you have Python installed. You will also need to install the `matplotlib` and `prettytable` libraries if you haven't done so already. Just run the following command in your terminal:
+## Installation
 
-   ```bash
-   pip install matplotlib prettytable
-   ```
+To run this code, you need to have Python installed on your machine. You can download Python from [python.org](https://www.python.org/downloads/).
 
-2. **Save the Script**:
-   Copy the code into a text editor and save it as `consonant_substring_value_calculator.py`.
+Additionally, you will need the `PrettyTable` library for displaying results in a table format. You can install it using pip:
 
-3. **Run the Script**:
-   Open your terminal or command prompt, navigate to the folder where you saved the script, and execute the command:
+```bash
+pip install prettytable
+```
 
-   ```bash
-   python consonant_substring_value_calculator.py
-   ```
+## Usage
 
-4. **View the Results**:
-   After running the script, a table will appear in your terminal showing the input strings and their highest consonant substring values. A bar chart will also be created and saved as `result_plot.jpg` in the same folder. Open this file to see a visual representation of the results. 📈🌟
+1. Clone the repository or download the code file.
+2. Run the script in your Python environment.
+
+```bash
+python consonant_substring_value.py
+```
+
+## Functionality
+
+The main function in this code is `solve(s: str) -> int`, which takes a string `s` as input and returns the highest value among all consonant substrings. The function works as follows:
+
+1. It defines a set of vowels to identify consonants.
+2. It calculates the value of each character based on its position in the alphabet.
+3. It extracts consonant substrings by replacing vowels with spaces and splitting the string.
+4. It computes the total value for each consonant substring and returns the maximum value found.
+
+## Test Cases
+
+The code includes several test cases to demonstrate its functionality:
+
+```python
+test_cases = [
+    "zodiacs",
+    "strength",
+    "cozy",
+    "xyzzy",
+    "zodiac",
+    "chruschtschov",
+    "khrushchev",
+    "twelfthstreet",
+    "mischtschenkoana"
+]
+```
 
 ## Example Output
 
-When you run the script, you will see something like this in your terminal:
+When you run the script, it will display the results in a formatted table:
 
 ```
 +---------------------+-------------------------------------+
 |        Input        | Highest Consonant Substring Value   |
 +---------------------+-------------------------------------+
-|      strength       |                 98                  |
-|       rhythm        |                 72                  |
-|     algorithm       |                 67                  |
-|         a           |                  0                  |
-|        bcdf         |                 10                  |
-|       python        |                 77                  |
-|      example        |                 36                  |
-|       hello         |                 22                  |
-|       world         |                 72                  |
-|     testcase        |                 66                  |
-|    beautiful        |                 0                   |
-|        sky          |                 55                  |
-|        xyz          |                 75                  |
+|       zodiacs       |                 26                  |
+|      strength       |                 92                  |
+|        cozy         |                 34                  |
+|       xyzzy        |                 75                  |
+|       zodiac        |                 26                  |
+|  chruschtschov      |                104                  |
+|     khrushchev      |                 96                  |
+|   twelfthstreet      |                108                  |
+|  mischtschenkoana   |                145                  |
 +---------------------+-------------------------------------+
 ```
 
-And the bar chart saved as `result_plot.jpg` will visually showcase the highest values of consonant substrings for each test case. Enjoy your analysis! 🎨📈
-
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-Feel free to modify any sections to better fit your project's needs!
+This project is licensed under the MIT License. Feel free to use, modify, and distribute the code as needed.
