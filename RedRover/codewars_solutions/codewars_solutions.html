@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😎 Kata List 💯 </title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            color: #569cd6;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #3c3c3c;
+            text-align: left;
+        }
+
+        th {
+            background-color: #252526;
+            color: #569cd6;
+        }
+
+        a {
+            color: #4ec9b0;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .description {
+            color: #9cdcfe;
+        }
+
+        .watermark {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 36px;
+            color: rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+            animation: fadeIn 3s ease-in-out;
+            /* Fade-in effect */
+            font-family: 'Arial', sans-serif;
+            /* Changed font family */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+            /* Added text shadow */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        var password = prompt("Enter the password:");
+        if (password !== "viper_hyper") {
+            alert("Access denied. Incorrect password.");
+            window.location.href = "access-denied.html";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Kata List</h1>
+    <p>
+        <a href="https://python-fiddle.com/saved/MRUATZI6eeZbRpp6kio0">Open Python Fiddle (Online Python Compiler)</a>
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Kata ID</th>
+                <th>Description</th>
+                <th>Solution</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="https://www.codewars.com/kata/55f9b48403f6b87a7c0000bd">55f9b48403f6b87a7c0000bd</a></td>
+                <td class="description">Beginner Series #1 School Paperwork</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution1.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="https://www.codewars.com/kata/53da3dbb4a5168369a0000fe">53da3dbb4a5168369a0000fe</a></td>
+                <td class="description">Even or Odd: Return "Even" for even numbers and "Odd" for odd numbers.</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution2.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="https://www.codewars.com/kata/5f70c883e10f9e0001c89673">5f70c883e10f9e0001c89673</a></td>
+                <td class="description">Gravity Flip: Sort columns of toy cubes after changing gravity direction.</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution3.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="https://www.codewars.com/kata/55a996e0e8520afab9000055">55a996e0e8520afab9000055</a></td>
+                <td class="description">Who ate the cookie?: Determine who ate the cookie based on input type.</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution4.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="https://www.codewars.com/kata/56dae9dc54c0acd29d00109a">56dae9dc54c0acd29d00109a</a></td>
+                <td class="description">Grasshopper - Function syntax debugging: Fix syntax errors in a function.</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution5.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="https://www.codewars.com/kata/53dc23c68a0c93699800041d">53dc23c68a0c93699800041d</a></td>
+                <td class="description">Sentence Smash: Combine an array of words into a sentence.</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution6.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><a href="https://www.codewars.com/kata/56676e8fabd2d1ff3000000c">56676e8fabd2d1ff3000000c</a></td>
+                <td class="description">A Needle in the Haystack: Find the position of "needle" in an array.</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution7.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><a href="https://www.codewars.com/kata/57089707fe2d01529f00024a">57089707fe2d01529f00024a</a></td>
+                <td class="description">Grasshopper - If/else syntax debug: Debug a function checking if the user is
+                    still alive.</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution8.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><a href="https://www.codewars.com/kata/55b1fd84a24ad00b32000075">55b1fd84a24ad00b32000075</a></td>
+                <td class="description">Selective fear of numbers: Determine if a number is feared based on the day of
+                    the week.</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution9.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><a href="https://www.codewars.com/kata/54530f75699b53e558002076">54530f75699b53e558002076</a></td>
+                <td class="description">NATO Phonetic Alphabet.</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution10.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td><a href="https://www.codewars.com/kata/59b0a6da44a4b7080300008a">59b0a6da44a4b7080300008a</a></td>
+                <td class="description">Converting 12-hour time to 24-hour time</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution11.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td><a href="https://www.codewars.com/kata/5390bac347d09b7da40006f6">5390bac347d09b7da40006f6</a></td>
+                <td class="description">Jaden Casing Strings</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution12.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td><a href="https://www.codewars.com/kata/559e5b717dd758a3eb00005a">559e5b717dd758a3eb00005a</a></td>
+                <td class="description">Dropcaps</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution13.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td><a href="https://www.codewars.com/kata/583df40bf30065fa9900010c">583df40bf30065fa9900010c</a></td>
+                <td class="description">The mean of two means</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution14.py">Solution</a>
+                </td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td><a href="https://www.codewars.com/kata/55b051fac50a3292a9000025">55b051fac50a3292a9000025</a></td>
+                <td class="description">Filter the number</td>
+                <td><a
+                        href="https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/solution15.py">Solution</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="watermark">d.nikey</div>
+</body>
+
+</html>
