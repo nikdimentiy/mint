@@ -1,0 +1,318 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    animation: slideIn 0.5s ease-out;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+}
+
+.visualization {
+    margin-top: 20px;
+    font-size: 0.9em;
+    background: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.visualization h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.visualization ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.visualization li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.visualization li:last-child {
+    border-bottom: none;
+}
+
+/* Watermark styles */
+.watermark {
+    position: relative;
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+.watermark-text {
+    display: inline-block;
+    animation: fadeIn 3s infinite alternate;
+}
+
+.github-link {
+    display: block;
+    margin-top: 5px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.github-link:hover {
+    color: #0056b3;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Multicolor styles */
+.multicolor {
+    display: inline-block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Add different colors for each letter */
+.multicolor:nth-child(1) {
+    color: #FF5733;
+}
+
+/* C */
+.multicolor:nth-child(2) {
+    color: #33FF57;
+}
+
+/* o */
+.multicolor:nth-child(3) {
+    color: #3357FF;
+}
+
+/* n */
+.multicolor:nth-child(4) {
+    color: #FF33A1;
+}
+
+/* s */
+.multicolor:nth-child(5) {
+    color: #FFBD33;
+}
+
+/* o */
+.multicolor:nth-child(6) {
+    color: #33FFF5;
+}
+
+/* n */
+.multicolor:nth-child(7) {
+    color: #FF33D4;
+}
+
+/* a */
+.multicolor:nth-child(8) {
+    color: #FF8C33;
+}
+
+/* n */
+.multicolor:nth-child(9) {
+    color: #33FF8C;
+}
+
+/* t */
+.multicolor:nth-child(10) {
+    color: #FF3333;
+}
+
+/* space */
+.multicolor:nth-child(11) {
+    color: #33FF33;
+}
+
+/* S */
+.multicolor:nth-child(12) {
+    color: #FF33FF;
+}
+
+/* u */
+.multicolor:nth-child(13) {
+    color: #33A1FF;
+}
+
+/* b */
+.multicolor:nth-child(14) {
+    color: #FF33B5;
+}
+
+/* s */
+.multicolor:nth-child(15) {
+    color: #FF5733;
+}
+
+/* t */
+.multicolor:nth-child(16) {
+    color: #33FF57;
+}
+
+/* r */
+.multicolor:nth-child(17) {
+    color: #3357FF;
+}
+
+/* i */
+.multicolor:nth-child(18) {
+    color: #FF33A1;
+}
+
+/* n */
+.multicolor:nth-child(19) {
+    color: #FFBD33;
+}
+
+/* g */
+.multicolor:nth-child(20) {
+    color: #33FFF5;
+}
+
+/* space */
+.multicolor:nth-child(21) {
+    color: #FF33D4;
+}
+
+/* V */
+.multicolor:nth-child(22) {
+    color: #FF8C33;
+}
+
+/* a */
+.multicolor:nth-child(23) {
+    color: #33FF8C;
+}
+
+/* l */
+.multicolor:nth-child(24) {
+    color: #FF3333;
+}
+
+/* u */
+.multicolor:nth-child(25) {
+    color: #33FF33;
+}
+
+/* e */
+.multicolor:nth-child(26) {
+    color: #FF33FF;
+}
+
+/* space */
+.multicolor:nth-child(27) {
+    color: #33A1FF;
+}
+
+/* C */
+.multicolor:nth-child(28) {
+    color: #FF33B5;
+}
+
+/* a */
+.multicolor:nth-child(29) {
+    color: #FF5733;
+}
+
+/* l */
+.multicolor:nth-child(30) {
+    color: #33FF57;
+}
+
+/* c */
+.multicolor:nth-child(31) {
+    color: #3357FF;
+}
+
+/* u */
+.multicolor:nth-child(32) {
+    color: #FF33A1;
+}
+
+/* l */
+.multicolor:nth-child(33) {
+    color: #FFBD33;
+}
+
+/* a */
+.multicolor:nth-child(34) {
+    color: #33FFF5;
+}
+
+/* t */
+.multicolor:nth-child(35) {
+    color: #FF33D4;
+}
+
+/* o */
+.multicolor:nth-child(36) {
+    color: #FF8C33;
+}
+
+/* r */
