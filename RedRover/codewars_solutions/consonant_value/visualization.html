@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strength Visualization</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s;
+            color: #4A90E2;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007BFF;
+            border-bottom: 2px solid #007BFF;
+            padding-bottom: 5px;
+        }
+
+        pre {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .result {
+            background-color: #ffcccc;
+            /* Light red color */
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>"Strength" Visualization</h1>
+
+    <div class="container">
+        <h2>Input String</h2>
+        <pre>"strength"</pre>
+
+        <h2>Identifying Consonant Substrings</h2>
+        <pre>
+s t r e n g t h
+│ │ │   │ │ │ │
+└─┴─┘   └─┴─┴─┘
+  ↓     ↓
+"str"  "ngth"
+        </pre>
+
+        <h2>Consonant Substrings Extracted</h2>
+        <ul>
+            <li><strong>"str"</strong></li>
+            <li><strong>"ngth"</strong></li>
+        </ul>
+
+        <h2>Calculating Values for Each Substring</h2>
+        <h3>a) For "str":</h3>
+        <pre>
+s = 19
+t = 20
+r = 18
+Total: 19 + 20 + 18 = 57
+        </pre>
+
+        <h3>b) For "ngth":</h3>
+        <pre>
+n = 14
+g = 7
+t = 20
+h = 8
+Total: 14 + 7 + 20 + 8 = 49
+        </pre>
+
+        <h2>Finding the Maximum Value</h2>
+        <pre>Max(19, 57, 49) = 57</pre>
+
+        <h2>Final Result</h2>
+        <div class="result">Result: 57</div>
+
+        <h2>Visual Representation of the Process</h2>
+        <pre>
+Input: "strength"
+│
+├─ Consonant Substrings:
+│  ├─ "str"  → 57 ◄── Highest Value
+│  └─ "ngth" → 49
+│
+└─ Result: 57
+        </pre>
+
+        <a href="https://github.com/nikdimentiy/mint/tree/main/RedRover/codewars_solutions/consonant_value"
+            target="_blank">View Code on GitHub</a>
+    </div>
+
+</body>
+
+</html>
