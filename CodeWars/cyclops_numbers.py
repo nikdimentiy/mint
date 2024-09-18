@@ -1,17 +1,32 @@
-# A cyclops number is a number in binary that is made up of all 1's, with one 0 in the exact middle.
-# That means all cyclops numbers must have an odd number of digits for there to be an exact middle.
-# A couple examples:
-# 101
-# 11111111011111111
-# You must take an input, n, that will be in decimal format (base 10), then return True
-# if that number wil be a cyclops number when converted to binary, or False if it won't.
-# Assume n will be a positive integer.
-
-
 def cyclops(n):
-    # convert n to binary and remove the '0b' prefix
+    """
+    Determine if a given positive integer n is a cyclops number when converted to binary.
+
+    A cyclops number in binary is defined as a number that consists of all 1's with exactly one 0 
+    in the middle position. This means the binary representation must have an odd number of digits.
+
+    Parameters:
+    n (int): A positive integer to be checked.
+
+    Returns:
+    bool: True if n is a cyclops number in binary, False otherwise.
+    """
+    # Convert the integer n to its binary representation and remove the '0b' prefix
     binary = bin(n)[2:]
 
-    # check if binary has an odd number of digits and a single '0' in the middle
+    # Calculate the middle index of the binary string
     middle_index = len(binary) // 2
-    return len(binary) % 2 == 1 and binary[middle_index] == '0' and '0' not in binary[:middle_index] + binary[middle_index+1:]
+
+    # Check if the binary representation has an odd number of digits
+    # and if the middle digit is '0'
+    # Also ensure there are no '0's in the rest of the binary string
+    return (len(binary) % 2 == 1 and 
+            binary[middle_index] == '0' and 
+            '0' not in binary[:middle_index] + binary[middle_index + 1:])
+
+# Driver code to test the cyclops function
+if __name__ == "__main__":
+    test_numbers = [5, 7, 21, 15, 511, 1023, 1024]
+    for number in test_numbers:
+        result = cyclops(number)
+        print(f"The number {number} is a cyclops number: {result}")
