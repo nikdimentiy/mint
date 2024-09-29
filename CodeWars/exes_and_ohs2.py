@@ -1,34 +1,35 @@
-# Check to see if a string has the same amount of 'x's and 'o's.
-# The method must return a boolean and be case insensitive. The string can contain any char.
-
-# Examples:
-
-# XO("ooxx") => true
-# XO("xooxx") => false
-# XO("ooxXm") => true
-# XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
-# XO("zzoo") => false
-
-
 def xo(s):
+    """
+    Check if a string has the same number of 'x's and 'o's, case insensitive.
+
+    Args:
+    s (str): The input string to check.
+
+    Returns:
+    bool: True if the number of 'x's and 'o's are the same, False otherwise.
+    """
+    # Initialize counters for 'x' and 'o'
     x_count, o_count = 0, 0
 
+    # Iterate through each character in the string
     for i in s:
+        # Count 'x' and 'X'
         if i == 'x' or i == 'X':
             x_count += 1
-
+        # Count 'o' and 'O'
         elif i == 'o' or i == 'O':
             o_count += 1
 
-    if x_count == o_count:
-        s = True
-    else:
-        s = False
+    # Compare counts of 'x' and 'o'
+    return x_count == o_count
 
-    return s
-
-
-print(xo("ooxXm") == True)
-print(xo("ooxm") == False)
-print(xo("mmnbm") == True)  # no x's or o's
-print(xo("xmnOm") == True)
+# Driver code to test the function
+if __name__ == "__main__":
+    # Test cases
+    print(xo("ooxx"))      # Expected: True
+    print(xo("xooxx"))     # Expected: False
+    print(xo("ooxXm"))     # Expected: True
+    print(xo("zpzpzpp"))   # Expected: True (no 'x' or 'o')
+    print(xo("zzoo"))      # Expected: False
+    print(xo("xmnOm"))     # Expected: True
+    print(xo("mmnbm"))     # Expected: True (no 'x' or 'o')
