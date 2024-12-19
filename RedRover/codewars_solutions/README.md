@@ -33,7 +33,7 @@ The **Codewars Solutions** repository is a collection of solved coding challenge
     
 3.  Explore the solutions directly in the repository or open the kata list webpage:
     
-    -   [Kata List Webpage](https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/kata_list.html)
+    -   [Kata List Webpage](https://github.com/nikdimentiy/mint/blob/main/RedRover/codewars_solutions/codewars_solutions.html)
     -   Use the password **`viper_hyper`** to access the webpage.
 
 ## Technologies Used
