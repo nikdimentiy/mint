@@ -1,171 +1,103 @@
-import copy
-import math
-from typing import List, Tuple
+import copy  
+import math  
+from typing import List, Tuple  
 
-Sudoku = List[List[int]]
+Sudoku = List[List[int]]  
 
+class SudokuError(Exception):  
+    """Exception raised when unable to solve the Sudoku puzzle."""  
+    pass  
 
-class SudokuError(Exception):
-    """Unable to solve the puzzle."""
+def sudoku_solved(puzzle: Sudoku) -> bool:  
+    """  
+    Check if the Sudoku puzzle is solved.  
 
+    A Sudoku puzzle is considered solved if all cells are filled.  
 
-def sudoku_solved(puzzle: Sudoku) -> bool:
-    return all(all(row) for row in puzzle)
+    Args:  
+        puzzle (Sudoku): A 2D list representing the Sudoku puzzle.  
 
+    Returns:  
+        bool: True if the puzzle is solved, False otherwise.  
+    """  
+    return all(all(row) for row in puzzle)  
 
-def get_row(puzzle: Sudoku, i: int) -> List[int]:
-    return puzzle[i]
+def get_row(puzzle: Sudoku, i: int) -> List[int]:  
+    """  
+    Get the specified row from the Sudoku puzzle.  
 
+    Args:  
+        puzzle (Sudoku): A 2D list representing the Sudoku puzzle.  
+        i (int): The index of the row to retrieve.  
 
-def get_column(puzzle: Sudoku, i: int) -> List[int]:
-    return [row[i] for row in puzzle]
+    Returns:  
+        List[int]: The specified row as a list of integers.  
+    """  
+    return puzzle[i]  
 
+def get_column(puzzle: Sudoku, i: int) -> List[int]:  
+    """  
+    Get the specified column from the Sudoku puzzle.  
 
-def get_square(puzzle: Sudoku, i: int) -> List[int]:
-    size = len(puzzle)
-    little_square_size = int(math.sqrt(size))
+    Args:  
+        puzzle (Sudoku): A 2D list representing the Sudoku puzzle.  
+        i (int): The index of the column to retrieve.  
 
-    x, y = divmod(i, little_square_size)
-    square = []
+    Returns:  
+        List[int]: The specified column as a list of integers.  
+    """  
+    return [row[i] for row in puzzle]  
 
-    for row in puzzle[x * little_square_size: (x + 1) * little_square_size]:
-        square.extend(
-            row[y * little_square_size: (y + 1) * little_square_size])
+def get_square(puzzle: Sudoku, i: int) -> List[int]:  
+    """  
+    Get the specified square (sub-grid) from the Sudoku puzzle.  
 
-    return square
+    Args:  
+        puzzle (Sudoku): A 2D list representing the Sudoku puzzle.  
+        i (int): The index of the square to retrieve.  
 
+    Returns:  
+        List[int]: The specified square as a list of integers.  
+    """  
+    size = len(puzzle)  
+    little_square_size = int(math.sqrt(size))  
 
-def can_be_placed_in_row(puzzle: Sudoku, row: int, value: int) -> bool:
-    return value not in get_row(puzzle, row)
+    x, y = divmod(i, little_square_size)  
+    square = []  
 
+    for row in puzzle[x * little_square_size: (x + 1) * little_square_size]:  
+        square.extend(  
+            row[y * little_square_size: (y + 1) * little_square_size]  
+        )  
 
-def can_be_placed_in_column(puzzle: Sudoku, column: int, value: int) -> bool:
-    return value not in get_column(puzzle, column)
+    return square  
 
+# Driver code to test the functions  
+if __name__ == "__main__":  
+    # Example Sudoku puzzle (0 represents empty cells)  
+    sudoku_puzzle = [  
+        [5, 3, 0, 0, 7, 0, 0, 0, 0],  
+        [6, 0, 0, 1, 9, 5, 0, 0, 0],  
+        [0, 9, 8, 0, 0, 0, 0, 6, 0],  
+        [8, 0, 0, 0, 6, 0, 0, 0, 3],  
+        [4, 0, 0, 8, 0, 3, 0, 0, 1],  
+        [7, 0, 0, 0, 2, 0, 0, 0, 6],  
+        [0, 6, 0, 0, 0, 0, 2, 8, 0],  
+        [0, 0, 0, 4, 1, 9, 0, 0, 5],  
+        [0, 0, 0, 0, 8, 0, 0, 7, 9],  
+    ]  
 
-def can_be_placed_in_square(puzzle: Sudoku, square: int, value: int) -> bool:
-    return value not in get_square(puzzle, square)
+    # Check if the puzzle is solved  
+    print("Is the Sudoku puzzle solved?", sudoku_solved(sudoku_puzzle))  
 
+    # Get and print a specific row  
+    row_index = 0  
+    print(f"Row {row_index}:", get_row(sudoku_puzzle, row_index))  
 
-def square_to_row_col(little_square_size, square_number, position) -> Tuple[int, int]:
-    row, column = divmod(square_number, little_square_size)
-    pos1, pos2 = divmod(position, little_square_size)
-    return row * little_square_size + pos1, column * little_square_size + pos2
+    # Get and print a specific column  
+    column_index = 1  
+    print(f"Column {column_index}:", get_column(sudoku_puzzle, column_index))  
 
-
-def row_col_to_square(little_square_size: int, row: int, column: int) -> int:
-    return (row // little_square_size * little_square_size) + (
-        column // little_square_size
-    )
-
-
-def sudoku(puzzle: Sudoku) -> Sudoku:
-    """return the solved puzzle as a 2d array of 9 x 9"""
-    assert len(puzzle) == len(puzzle[0]) == 9
-    size = len(puzzle)
-
-    if not math.sqrt(size).is_integer():
-        raise ValueError("Sudoku can not be splitted to little squares")
-
-    little_square_size = int(math.sqrt(size))
-
-    puzzle = copy.deepcopy(puzzle)
-
-    while not sudoku_solved(puzzle):
-        making_progress = False
-
-        # try rows
-        for row_number in range(size):
-            if 0 not in get_row(puzzle, row_number):
-                continue
-            for value in range(1, size + 1):
-                if not can_be_placed_in_row(puzzle, row_number, value):
-                    continue
-
-                columns_not_empty = [
-                    not puzzle[row_number][column_number]
-                    for column_number in range(size)
-                ]
-                columns_column = [
-                    can_be_placed_in_column(puzzle, column_number, value)
-                    for column_number in range(size)
-                ]
-                columns_square = [
-                    can_be_placed_in_square(
-                        puzzle,
-                        row_col_to_square(
-                            little_square_size, row_number, column_number
-                        ),
-                        value,
-                    )
-                    for column_number in range(size)
-                ]
-                columns = [
-                    c1 and c2 and c3
-                    for c1, c2, c3 in zip(
-                        columns_not_empty, columns_column, columns_square
-                    )
-                ]
-                if columns.count(True) == 1:
-                    c = columns.index(True)
-                    puzzle[row_number][c] = value
-                    making_progress = True
-
-        # try columns
-        for column_number in range(size):
-            if 0 not in get_column(puzzle, column_number):
-                continue
-            for value in range(1, size + 1):
-                if not can_be_placed_in_column(puzzle, column_number, value):
-                    continue
-
-                rows = [
-                    (
-                        not puzzle[row_number][column_number]
-                        and can_be_placed_in_row(puzzle, row_number, value)
-                        and can_be_placed_in_square(
-                            puzzle,
-                            row_col_to_square(
-                                little_square_size, row_number, column_number
-                            ),
-                            value,
-                        )
-                    )
-                    for row_number in range(size)
-                ]
-                if rows.count(True) == 1:
-                    r = rows.index(True)
-                    puzzle[r][column_number] = value
-                    making_progress = True
-
-        # try little squares
-        for square_number in range(size):
-            if 0 not in get_square(puzzle, square_number):
-                continue
-            for value in range(1, size + 1):
-                if not can_be_placed_in_square(puzzle, square_number, value):
-                    continue
-
-                positions = []
-                for p in range(size):
-                    row_number, column_number = square_to_row_col(
-                        little_square_size, square_number, p
-                    )
-                    positions.append(
-                        not puzzle[row_number][column_number]
-                        and can_be_placed_in_row(puzzle, row_number, value)
-                        and can_be_placed_in_column(puzzle, column_number, value)
-                    )
-
-                if positions.count(True) == 1:
-                    p = positions.index(True)
-                    row_number, column_number = square_to_row_col(
-                        little_square_size, square_number, p
-                    )
-                    puzzle[row_number][column_number] = value
-                    making_progress = True
-
-        if not making_progress:
-            raise SudokuError()
-
-    return puzzle
+    # Get and print a specific square (sub-grid)  
+    square_index = 0  
+    print(f"Square {square_index}:", get_square(sudoku_puzzle, square_index))
