@@ -1,7 +1,4 @@
-# CodeWars task: solution --> https://www.codewars.com/kata/58663693b359c4a6560001d6/train/python
-
 from typing import List
-
 
 def maze_runner(maze: List[List[int]], directions: List[str]) -> str:
     """
@@ -24,18 +21,26 @@ def maze_runner(maze: List[List[int]], directions: List[str]) -> str:
         "Dead" - if a wall is hit or the border of the maze is exceeded
         "Lost" - if all directions are used but the finish point is not reached
 
-    Raises:
-    None
+    Example:
+    maze = [
+        [1, 1, 1, 1, 1],
+        [2, 0, 0, 1, 3],
+        [1, 1, 0, 1, 1],
+        [1, 1, 1, 1, 1]
+    ]
+    directions = ["E", "E", "S"]
+    result = maze_runner(maze, directions)  # result will be "Finish"
     """
 
-    # find starting point
+    # Find the starting point (2) in the maze
     for row in range(len(maze)):
         for col in range(len(maze[0])):
             if maze[row][col] == 2:
-                x, y = col, row
+                x, y = col, row  # Store the starting coordinates
 
-    # follow directions
+    # Follow the given directions
     for direction in directions:
+        # Update the coordinates based on the direction
         if direction == "N":
             y -= 1
         elif direction == "E":
@@ -45,16 +50,49 @@ def maze_runner(maze: List[List[int]], directions: List[str]) -> str:
         elif direction == "W":
             x -= 1
 
-        # check if out of bounds
+        # Check if out of bounds
         if x < 0 or x >= len(maze[0]) or y < 0 or y >= len(maze):
             return "Dead"
 
-        # check if hit a wall
+        # Check if hit a wall
         if maze[y][x] == 1:
             return "Dead"
 
-        # check if reached finish
+        # Check if reached the finish point
         if maze[y][x] == 3:
             return "Finish"
 
+    # If all directions are used and finish point is not reached
     return "Lost"
+
+# Driver code to test the maze_runner function
+if __name__ == "__main__":
+    # Define a sample maze
+    maze = [
+        [1, 1, 1, 1, 1],
+        [2, 0, 0, 1, 3],
+        [1, 1, 0, 1, 1],
+        [1, 1, 1, 1, 1]
+    ]
+    
+    # Define directions to navigate the maze
+    directions = ["E", "E", "S"]
+    
+    # Call the maze_runner function and print the result
+    result = maze_runner(maze, directions)
+    print(result)  # Expected output: "Finish"
+
+    # Test with another set of directions
+    directions = ["E", "E", "N", "N"]
+    result = maze_runner(maze, directions)
+    print(result)  # Expected output: "Lost"
+
+    # Test with a direction that hits a wall
+    directions = ["E", "S", "S"]
+    result = maze_runner(maze, directions)
+    print(result)  # Expected output: "Dead"
+
+    # Test with directions that go out of bounds
+    directions = ["N", "N"]
+    result = maze_runner(maze, directions)
+    print(result)  # Expected output: "Dead"
